@@ -24,27 +24,26 @@ public class PlayerController : MonoBehaviour
     private const string CHERRY_TAG = "cherry";
     private const string ENEMY_TAG = "Enemy";
 
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
 
-        spawnPosition = transform.position; // L?u v? trí b?t ??u
-        PermanentUI.perm.SetDefaultSpawn(spawnPosition);      // G?i spawn cho PermanentUI
+        spawnPosition = transform.position;
+        PermanentUI.perm.SetDefaultSpawn(spawnPosition);
         PermanentUI.perm.LoadCheckpointState(gameObject);
         PermanentUI.perm.UpdateUI();
     }
+
     void Update()
     {
-        //neu ko bi thuong thi di chuyen bth
         if (state != State.hurt)
         {
             Movement();
         }
         AnimationState();
-        animator.SetInteger("state", (int)state); //set animation on based Enumrator state
+        animator.SetInteger("state", (int)state);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -86,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
             if (PermanentUI.perm.health <= 0)
             {
-                PermanentUI.perm.FullReset();
+                SceneManager.LoadScene("GameOver"); // chuyen scene khi chet
             }
             else
             {
@@ -112,11 +111,13 @@ public class PlayerController : MonoBehaviour
             {
                 state = State.hurt;
                 PermanentUI.perm.SubtractHealth();
+
                 if (PermanentUI.perm.health <= 0)
                 {
                     SceneManager.LoadScene("Retry");
                     return;
                 }
+
                 if (other.gameObject.transform.position.x > transform.position.x)
                 {
                     rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
@@ -129,7 +130,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //xem co chan co cham dat ko
     private void OnCollisionStay2D(Collision2D collision)
     {
         foreach (ContactPoint2D contact in collision.contacts)
@@ -194,7 +194,6 @@ public class PlayerController : MonoBehaviour
                 state = State.idle;
             }
         }
-        //sau khi bi tan cong thi khi nao toc do = 0 thi moi dc di chuyen
         else if (state == State.hurt)
         {
             if (Mathf.Abs(rb.velocity.x) < .1f)
