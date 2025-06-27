@@ -28,7 +28,7 @@ public class LevelTimer : MonoBehaviour
         }
         if (timeLeft <= 0)
         {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Retry");
         }
     }
 

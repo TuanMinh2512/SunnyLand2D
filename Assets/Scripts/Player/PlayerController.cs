@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             LevelTimer timer = FindObjectOfType<LevelTimer>();
             if (timer != null)
             {
-                timer?.CompleteLevel();
+                timer.CompleteLevel();
             }
 
             Scene currentScene = SceneManager.GetActiveScene();
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
                 PermanentUI.perm.SubtractHealth();
                 if (PermanentUI.perm.health <= 0)
                 {
-                    PermanentUI.perm.FullReset();
+                    SceneManager.LoadScene("Retry");
                     return;
                 }
                 if (other.gameObject.transform.position.x > transform.position.x)

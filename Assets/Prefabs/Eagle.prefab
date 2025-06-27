@@ -153,7 +153,7 @@ MonoBehaviour:
   respawnDelay: 3
   offsetUpRight: {x: 3, y: 3}
   offsetDownLeft: {x: -3, y: -2}
-  flySpeed: 3
+  flySpeed: 3.5
   pauseDuration: 1
 --- !u!61 &-6020667994918544647
 BoxCollider2D:
