@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelTimer : MonoBehaviour
 {
-    [SerializeField]private float timeLimit = 60f;
+    [SerializeField] private LevelSettingsDatabase settingsDatabase;
     [SerializeField]private TextMeshProUGUI timerText;
 
     private float timeLeft;
@@ -14,7 +14,8 @@ public class LevelTimer : MonoBehaviour
 
     private void Start()
     {
-        timeLeft = timeLimit;
+        ResetTimer();
+        PermanentUI.perm?.UpdateUI();
     }
 
     private void Update()
@@ -28,7 +29,7 @@ public class LevelTimer : MonoBehaviour
         }
         if (timeLeft <= 0)
         {
-            SceneManager.LoadScene("Retry");
+            SceneManager.LoadScene("GameOver");
         }
     }
 
@@ -36,4 +37,17 @@ public class LevelTimer : MonoBehaviour
     {
         levelCompleted = true;
     }
+
+    public void ResetTimer()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        timeLeft = settingsDatabase.GetTimeLimitForScene(currentScene);
+        levelCompleted = false;
+
+        if (timerText != null)
+        {
+            timerText.text = $"Time: {timeLeft:F1}s";
+        }
+    }
+
 }

@@ -30,8 +30,30 @@ public class PermanentUI : MonoBehaviour
         }
     }
 
+    private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
+    private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        string sceneName = scene.name;
+
+        bool isGameplayScene = sceneName != "MainMenu" && sceneName != "GameOver" && sceneName != "Options" && sceneName != "Guide";
+
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(isGameplayScene);
+        }
+
+        if (isGameplayScene)
+        {
+            UpdateUI();
+            var timer = FindObjectOfType<LevelTimer>();
+            timer?.ResetTimer();
+        }
+    }
     public void UpdateUI()
     {
+            
         if (cherryText != null) cherryText.text = cherris.ToString();
         if (healthCount != null) healthCount.text = health.ToString();
     }
@@ -78,7 +100,8 @@ public class PermanentUI : MonoBehaviour
         cherris = 0;
         health = 3;
         checkpointPositions.Clear();
+        defaultSpawnPositions.Clear();
+
         SceneManager.LoadScene("Level1");
-        UpdateUI();
     }
 }

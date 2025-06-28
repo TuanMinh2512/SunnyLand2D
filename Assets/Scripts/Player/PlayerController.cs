@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
                 if (PermanentUI.perm.health <= 0)
                 {
-                    SceneManager.LoadScene("Retry");
+                    SceneManager.LoadScene("GameOver");
                     return;
                 }
 

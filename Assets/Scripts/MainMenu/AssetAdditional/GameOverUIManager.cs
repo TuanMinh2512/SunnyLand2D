@@ -5,6 +5,7 @@ public class GameOverUIManager : MonoBehaviour
 {
     public void Retry()
     {
+        PermanentUI.perm.FullReset();
         SceneManager.LoadScene("Level1");
     }
 

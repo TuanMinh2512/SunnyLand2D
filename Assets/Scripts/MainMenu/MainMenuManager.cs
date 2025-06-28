@@ -6,6 +6,7 @@ public class MainMenuManager : MonoBehaviour
     // Nut bat dau choi
     public void StartGame()
     {
+        PermanentUI.perm?.FullReset();
         SceneManager.LoadScene("Level1");
     }
 
