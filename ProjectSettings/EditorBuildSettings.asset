@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Leaderboard.unity
     guid: 5c7480217341d464b9eac8e2fc952849
   - enabled: 1
-    path: Assets/Scenes/Leaderboard_Show.unity
-    guid: 599bc716a2837c34ea6ec2d93e1fac4f
-  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
