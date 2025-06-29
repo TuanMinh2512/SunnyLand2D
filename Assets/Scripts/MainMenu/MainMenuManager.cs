@@ -7,7 +7,7 @@ public class MainMenuManager : MonoBehaviour
     public void StartGame()
     {
         PermanentUI.perm?.FullReset();
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("EnterName");
     }
 
     // Nut OPTIONS
