@@ -13,6 +13,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool autoRespawn = false;
     [SerializeField] private float respawnDelay = 3f;
 
+    [Header("Player Detection")]
+    [SerializeField] protected float detectRange = 10f;
+    protected Transform player;
+    protected bool isPlayerInRange = false;
+
     private Vector3 originalPosition;
     private Quaternion originalRotation;
 
@@ -22,9 +27,19 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         deathSound = GetComponent<AudioSource>();
         col = GetComponent<Collider2D>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 
         originalPosition = transform.position;
         originalRotation = transform.rotation;
+    }
+
+    protected virtual void Update()
+    {
+        if (player != null && !isDead)
+        {
+            float distance = Vector2.Distance(player.position, transform.position);
+            isPlayerInRange = distance <= detectRange;
+        }
     }
     public virtual void JumpOn()
     {
@@ -71,4 +86,5 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(respawnDelay);
         Revive();
     }
+
 }

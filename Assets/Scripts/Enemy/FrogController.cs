@@ -21,8 +21,10 @@ public class FrogController : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (isDead) return;
 
         //Transition from Jump to Fall
@@ -81,15 +83,31 @@ public class FrogController : Enemy
         }
     }
 
+    private void MoveTowardsPlayer()
+    {
+        if (player == null || !col.IsTouchingLayers(ground)) return;
+
+        float dir = player.position.x - transform.position.x;
+        float moveDir = Mathf.Sign(dir);
+
+        rb.velocity = new Vector2(moveDir * jumpLength, jumpHeight);
+        animator.SetBool("Jumping", true);
+
+        transform.localScale = new Vector2(moveDir > 0 ? -1 : 1, 1);
+    }
+
     private IEnumerator JumpLoop()
     {
         while (true)
         {
             yield return new WaitForSeconds(jumpInterval);
-            if (!isDead && col.IsTouchingLayers(ground))
-            {
+
+            if (isDead || !col.IsTouchingLayers(ground)) continue;
+
+            if (isPlayerInRange)
+                MoveTowardsPlayer();
+            else
                 Move();
-            }
         }
     }
     public override void JumpOn()

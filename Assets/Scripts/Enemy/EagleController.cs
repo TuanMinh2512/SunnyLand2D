@@ -27,18 +27,12 @@ public class EagleController : Enemy
     {
         while (true)
         {
-            Vector3 target = movingToB ? pointB : pointA;
+            Vector3 target = isPlayerInRange ? player.position : (movingToB ? pointB : pointA);
 
-            if (movingToB)
-            {
-                animator.ResetTrigger("FlyBack");
+            if (isPlayerInRange)
                 animator.SetTrigger("Dive");
-            }
             else
-            {
-                animator.ResetTrigger("Dive");
-                animator.SetTrigger("FlyBack");
-            }
+                animator.SetTrigger(movingToB ? "Dive" : "FlyBack");
 
             while (Vector3.Distance(transform.position, target) > 0.05f)
             {
@@ -53,7 +47,8 @@ public class EagleController : Enemy
             }
 
             yield return new WaitForSeconds(pauseDuration);
-            movingToB = !movingToB;
+            if (!isPlayerInRange)
+                movingToB = !movingToB;
         }
     }
 
