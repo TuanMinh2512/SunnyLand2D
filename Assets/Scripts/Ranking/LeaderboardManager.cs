@@ -9,11 +9,17 @@ public class LeaderboardManager
     public static void SubmitScore(string level, string name, float time, int cherries)
     {
         List<Entry> entries = LoadScores(level);
+
         entries.Add(new Entry(name, time, cherries));
 
-        entries.Sort((a, b) => a.time.CompareTo(b.time)); // s?p x?p theo th?i gian t?ng d?n
+        entries.Sort((a, b) =>
+        {
+            int timeCompare = a.time.CompareTo(b.time);
+            if (timeCompare == 0)
+                return b.cherries.CompareTo(a.cherries); 
+            return timeCompare;
+        });
 
-        //xóa ng??i ch?i kh?i b?ng x?p h?ng, ch? có 5 ng??i top thôi
         if (entries.Count > maxEntries)
             entries.RemoveRange(maxEntries, entries.Count - maxEntries);
 
@@ -21,7 +27,7 @@ public class LeaderboardManager
         {
             PlayerPrefs.SetString($"{level}_Score_{i}_Name", entries[i].name);
             PlayerPrefs.SetFloat($"{level}_Score_{i}_Time", entries[i].time);
-            PlayerPrefs.SetInt($"{level}_Score_{i}_Cherries", entries[i].cherries);
+            PlayerPrefs.SetInt($"{level}_Score_{i}_Cherry", entries[i].cherries);
         }
 
         PlayerPrefs.Save();

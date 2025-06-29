@@ -50,4 +50,8 @@ public class LevelTimer : MonoBehaviour
         }
     }
 
+    public float GetTimeLeft()
+    {
+        return timeLeft;
+    }
 }
