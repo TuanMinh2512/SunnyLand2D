@@ -13,6 +13,8 @@ public class EnterNameManager : MonoBehaviour
         if (!string.IsNullOrEmpty(playerName))
         {
             PlayerPrefs.SetString("PlayerName", playerName); // Luu ten
+            PlayerPrefs.Save();
+
             SceneManager.LoadScene("Level1"); // Chuyen sang Level1
         }
         else

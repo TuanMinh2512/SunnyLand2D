@@ -15,7 +15,6 @@ public class LevelTimer : MonoBehaviour
     private void Start()
     {
         ResetTimer();
-        PermanentUI.perm?.UpdateUI();
     }
 
     private void Update()
@@ -41,7 +40,10 @@ public class LevelTimer : MonoBehaviour
     public void ResetTimer()
     {
         string currentScene = SceneManager.GetActiveScene().name;
-        timeLeft = settingsDatabase.GetTimeLimitForScene(currentScene);
+        float time = settingsDatabase.GetTimeLimitForScene(currentScene);
+        Debug.Log($"[ResetTimer] Scene: {currentScene}, time reset to: {time}");
+
+        timeLeft = time;
         levelCompleted = false;
 
         if (timerText != null)
@@ -50,4 +52,10 @@ public class LevelTimer : MonoBehaviour
         }
     }
 
+    public float GetTimeComplete()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        float totalTime = settingsDatabase.GetTimeLimitForScene(currentScene);
+        return totalTime - timeLeft;
+    }
 }

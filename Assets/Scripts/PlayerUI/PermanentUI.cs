@@ -37,7 +37,7 @@ public class PermanentUI : MonoBehaviour
     {
         string sceneName = scene.name;
 
-        bool isGameplayScene = sceneName != "MainMenu" && sceneName != "GameOver" && sceneName != "Options" && sceneName != "Guide";
+        bool isGameplayScene = sceneName != "MainMenu" && sceneName != "GameOver" && sceneName != "Options" && sceneName != "Guide" && sceneName != "EnterName" && sceneName != "Leaderboard";
 
         foreach (Transform child in transform)
         {
@@ -47,8 +47,6 @@ public class PermanentUI : MonoBehaviour
         if (isGameplayScene)
         {
             UpdateUI();
-            var timer = FindObjectOfType<LevelTimer>();
-            timer?.ResetTimer();
         }
     }
     public void UpdateUI()
