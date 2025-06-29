@@ -608,6 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 587521927}
   - component: {fileID: 587521928}
+  - component: {fileID: 587521929}
   m_Layer: 5
   m_Name: Panel_Level2
   m_TagString: Untagged
@@ -632,7 +633,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -41.838, y: -21.540009}
-  m_SizeDelta: {x: 572.21, y: 112.41998}
+  m_SizeDelta: {x: 0, y: 112.41998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587521928
 MonoBehaviour:
@@ -660,6 +661,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &587521929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587521926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 1
+  m_VerticalFit: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081857099}
   - component: {fileID: 1081857100}
+  - component: {fileID: 1081857101}
   m_Layer: 5
   m_Name: Panel_Level3
   m_TagString: Untagged
@@ -885,7 +901,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -41.838, y: -21.540009}
-  m_SizeDelta: {x: 572.21, y: 112.41998}
+  m_SizeDelta: {x: 0, y: 112.41998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1081857100
 MonoBehaviour:
@@ -913,6 +929,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1081857101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081857098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 1
+  m_VerticalFit: 0
 --- !u!1 &1424069033
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1426793467}
   - component: {fileID: 1426793468}
+  - component: {fileID: 1426793469}
   m_Layer: 5
   m_Name: Panel_Level1
   m_TagString: Untagged
@@ -1015,7 +1046,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -40.5692, y: -21.540009}
-  m_SizeDelta: {x: 574.7493, y: 112.41998}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426793468
 MonoBehaviour:
@@ -1043,6 +1074,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1426793469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426793466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 1
+  m_VerticalFit: 0
 --- !u!1 &1428229409
 GameObject:
   m_ObjectHideFlags: 0
