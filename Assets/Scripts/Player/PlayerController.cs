@@ -69,10 +69,10 @@ public class PlayerController : MonoBehaviour
 
             string currentLevelName = SceneManager.GetActiveScene().name;
             string playerName = PlayerPrefs.GetString("PlayerName", "NoName"); 
-            float timeTaken = timer != null ? timer.GetTimeLeft() : 0f;
+            float timeComplete = timer != null ? timer.GetTimeComplete() : 0f;
             int cherries = PermanentUI.perm.cherris;
 
-            LeaderboardManager.SubmitScore(currentLevelName, playerName, timeTaken, cherries);
+            LeaderboardManager.SubmitScore(currentLevelName, playerName, timeComplete, cherries);
 
             Scene currentScene = SceneManager.GetActiveScene();
             int nextSceneIndex = currentScene.buildIndex + 1;

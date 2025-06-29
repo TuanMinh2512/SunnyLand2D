@@ -40,7 +40,7 @@ public class LeaderboardManager
         {
             string nameKey = $"{level}_Score_{i}_Name";
             string timeKey = $"{level}_Score_{i}_Time";
-            string cherryKey = $"{level}_Score_{i}_Cherries";
+            string cherryKey = $"{level}_Score_{i}_Cherry";
 
             if (PlayerPrefs.HasKey(nameKey) && PlayerPrefs.HasKey(timeKey) && PlayerPrefs.HasKey(cherryKey))
             {

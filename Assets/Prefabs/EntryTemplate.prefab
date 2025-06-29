@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 5348996890078477725}
   - component: {fileID: 4588955486673647411}
   - component: {fileID: 4092487398819252746}
+  - component: {fileID: 3623001731815051804}
   m_Layer: 5
   m_Name: EntryTemplate
   m_TagString: Untagged
@@ -389,6 +390,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3623001731815051804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858908086824238081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: 40
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &8106110802822753088
 GameObject:
   m_ObjectHideFlags: 0
