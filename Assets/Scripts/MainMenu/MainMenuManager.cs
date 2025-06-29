@@ -16,6 +16,12 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("Options");
     }
 
+    // Nut LEADERBOARD
+    public void OpenLeaderboard()
+    {
+        SceneManager.LoadScene("Leaderboard");
+    }
+
     // Nut GUIDE
     public void OpenGuide()
     {
