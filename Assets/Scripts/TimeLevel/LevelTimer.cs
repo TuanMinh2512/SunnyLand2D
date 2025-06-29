@@ -15,7 +15,6 @@ public class LevelTimer : MonoBehaviour
     private void Start()
     {
         ResetTimer();
-        PermanentUI.perm?.UpdateUI();
     }
 
     private void Update()
