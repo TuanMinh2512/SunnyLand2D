@@ -46,6 +46,7 @@ public class PermanentUI : MonoBehaviour
 
         if (isGameplayScene)
         {
+
             UpdateUI();
         }
     }

@@ -10,6 +10,7 @@ TagManager:
   - Checkpoint
   - CherryCount
   - HealthCount
+  - Ladder
   layers:
   - Default
   - TransparentFX

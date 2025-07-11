@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoRespawn: 1
   respawnDelay: 3
+  detectRange: 1
   offsetUpRight: {x: 3, y: 3}
   offsetDownLeft: {x: -3, y: -2}
   flySpeed: 3.5
